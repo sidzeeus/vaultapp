@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vault — Sign in</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page">
+
+  <div class="auth-shell">
+
+    <div class="auth-left">
+      <div class="auth-left__inner">
+        <div class="brand brand--lg">
+          <div class="brand__icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect x="2" y="2" width="20" height="20" rx="5" fill="white" fill-opacity=".15"/>
+              <path d="M7 12.5L10 15.5L17 8.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span>Vault</span>
+        </div>
+        <h1 class="auth-left__headline">Your files.<br/>Your cloud.</h1>
+        <p class="auth-left__sub">Secure personal storage powered by Amazon S3. Upload, organise and access your files from anywhere.</p>
+        <ul class="auth-features">
+          <li><span class="feat-dot"></span>End-to-end file ownership</li>
+          <li><span class="feat-dot"></span>Drag-and-drop uploads</li>
+          <li><span class="feat-dot"></span>Instant secure downloads</li>
+          <li><span class="feat-dot"></span>100 MB per file</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="auth-right">
+      <div class="auth-card">
+
+        <div class="auth-tabs">
+          <button class="auth-tab is-active" data-tab="login">Sign in</button>
+          <button class="auth-tab" data-tab="register">Create account</button>
+        </div>
+
+        <!-- Sign in -->
+        <form id="loginForm" class="auth-form">
+          <div class="field">
+            <label for="loginEmail">Email</label>
+            <input id="loginEmail" type="email" placeholder="you@example.com" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <input id="loginPassword" type="password" placeholder="••••••••" autocomplete="current-password" required />
+          </div>
+          <div id="loginError" class="form-error" hidden></div>
+          <button type="submit" class="btn btn--primary btn--full" id="loginBtn">
+            <span class="btn-label">Sign in</span>
+            <span class="btn-spinner" hidden></span>
+          </button>
+        </form>
+
+        <!-- Create account -->
+        <form id="registerForm" class="auth-form" hidden>
+          <div class="field">
+            <label for="regName">Full name</label>
+            <input id="regName" type="text" placeholder="Alex Johnson" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="regEmail">Email</label>
+            <input id="regEmail" type="email" placeholder="you@example.com" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="regPassword">
+              Password
+              <span class="label-hint">min. 8 characters</span>
+            </label>
+            <input id="regPassword" type="password" placeholder="••••••••" autocomplete="new-password" required />
+          </div>
+          <div id="registerError" class="form-error" hidden></div>
+          <button type="submit" class="btn btn--primary btn--full" id="registerBtn">
+            <span class="btn-label">Create account</span>
+            <span class="btn-spinner" hidden></span>
+          </button>
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

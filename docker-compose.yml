@@ -1,0 +1,9 @@
+services:
+  vault:
+    build: ./backend
+    container_name: vault-app
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./backend/.env
+    restart: unless-stopped
